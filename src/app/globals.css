@@ -1,5 +1,57 @@
 @import "tailwindcss";
 
 :root {
-	color-scheme: light dark;
+	color-scheme: light;
+	--bg: oklch(0.99 0.003 240);
+	--surface: oklch(0.97 0.004 240);
+	--fg: oklch(0.22 0.012 250);
+	--muted: oklch(0.48 0.012 250);
+	--line: oklch(0.91 0.006 245);
+	--accent: oklch(0.52 0.09 210);
+	--selection: oklch(0.88 0.05 210);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+		--bg: oklch(0.17 0.008 250);
+		--surface: oklch(0.21 0.009 250);
+		--fg: oklch(0.93 0.006 245);
+		--muted: oklch(0.7 0.01 245);
+		--line: oklch(0.29 0.01 250);
+		--accent: oklch(0.75 0.09 205);
+		--selection: oklch(0.38 0.06 210);
+	}
+}
+
+@theme inline {
+	--color-bg: var(--bg);
+	--color-surface: var(--surface);
+	--color-fg: var(--fg);
+	--color-muted: var(--muted);
+	--color-line: var(--line);
+	--color-accent: var(--accent);
+	--font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+	--font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+html {
+	background: var(--bg);
+	color: var(--fg);
+	-webkit-font-smoothing: antialiased;
+	scrollbar-color: var(--line) transparent;
+}
+
+::selection {
+	background: var(--selection);
+}
+
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 2px;
+	border-radius: 4px;
+}
+
+a {
+	text-underline-offset: 3px;
 }

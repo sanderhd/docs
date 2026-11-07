@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Search from "./Search"
-
-export const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Docs"
+import { siteName } from "@/lib/site"
 
 export function Logo() {
 	return (

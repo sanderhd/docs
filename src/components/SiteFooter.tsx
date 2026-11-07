@@ -1,4 +1,4 @@
-import { siteName } from "./SiteHeader"
+import { siteName } from "@/lib/site"
 
 export default function SiteFooter() {
 	return (
